@@ -1,0 +1,33 @@
+---
+- name: Deployer nginx, nginx-exporter et Prometheus
+  hosts: monitoring
+  become: true
+
+  tasks:
+    - name: Attendre la fin de l'initialisation
+      ansible.builtin.command: cloud-init status --wait
+      changed_when: false
+
+    - name: S'assurer que Docker est demarre
+      ansible.builtin.service:
+        name: docker
+        state: started
+        enabled: true
+
+    - name: Creer le dossier du projet
+      ansible.builtin.file:
+        path: /opt/monitoring
+        state: directory
+        owner: ubuntu
+
+    - name: Copier docker-compose et les configurations
+      ansible.builtin.copy:
+        src: files/
+        dest: /opt/monitoring/
+        owner: ubuntu
+
+    - name: Lancer la stack
+      community.docker.docker_compose_v2:
+        project_src: /opt/monitoring
+        state: present
+        pull: missing

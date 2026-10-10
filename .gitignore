@@ -1,0 +1,10 @@
+inventory.ini
+secrets.yml
+.env
+*.pem
+monitest
+monitest.pub
+*.tfstate*
+*.tfvars
+.terraform/
+*.tfplan
