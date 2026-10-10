@@ -1,5 +1,5 @@
 ---
-- name: Deployer nginx, nginx-exporter et Prometheus
+- name: Deployer nginx, nginx-exporter, Prometheus et Grafana
   hosts: monitoring
   become: true
 
