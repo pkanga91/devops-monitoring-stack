@@ -5,7 +5,7 @@ Mon projet perso pour m'entraîner au DevOps après ma formation d'administrateu
 
 Le but : **déployer et superviser un serveur Nginx** sur AWS, en automatisant un maximum de choses avec **Terraform**, **Ansible**, **Docker Compose**, **Prometheus** et **Grafana**.
 
-> Je suis junior et c'est un projet d'apprentissage : tout n'est pas parfait, mais j'ai essayé de comprendre ce que je faisais. Les retours sont les bienvenus !
+
 
 ## Comment j'ai travaillé : d'une EC2 vers une autre
 
